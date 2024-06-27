@@ -10,7 +10,7 @@ import (
 )
 
 
-func getinput(reader *bufio.Reader, prompt string) (int, error) {
+func getInput(reader *bufio.Reader, prompt string) (int, error) {
 	fmt.Print(prompt)
 	input, err := reader.ReadString('\n')
 	if err != nil {
