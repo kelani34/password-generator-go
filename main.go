@@ -54,6 +54,14 @@ func main() {
 		password = append(password, specialCharacters[randomIndex])
 	}	
 
-	fmt.Println(password)
+	// shuffle password
+
+	rand.Shuffle(len(password), func(i, j int) {
+		password[i], password[j] = password[j], password[i]
+	})
+
+	passwordResult := strings.Join(password, "")
+	fmt.Println(passwordResult)
+
 
 }
