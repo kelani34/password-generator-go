@@ -38,8 +38,22 @@ func main() {
 	lettersInput, _ := getInput(reader, "How many letters would you like your password to have?{(a-z)-(A-Z)}: ")
 	specialCharactersInput, _ := getInput(reader, "How many special characters would you like your password to have?{!-|}: ")	
 
-	fmt.Println(numbersInput, lettersInput, specialCharactersInput)
+	password := []string{}	
 
-	
+	// randomize passowrd
+	for i := 0; i <= numbersInput; i++ {
+		randomIndex := rand.Intn(len(numbers))
+		password = append(password, numbers[randomIndex])
+	}
+	for i := 0; i <= lettersInput; i++ {
+		randomIndex := rand.Intn(len(letters))
+		password = append(password, letters[randomIndex])
+	}
+	for i := 0; i <= specialCharactersInput; i++ {
+		randomIndex := rand.Intn(len(specialCharacters))
+		password = append(password, specialCharacters[randomIndex])
+	}	
+
+	fmt.Println(password)
 
 }
